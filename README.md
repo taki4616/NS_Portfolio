@@ -31,10 +31,10 @@ I’m **Nataki**, a backend-leaning software engineer who transitioned from 20 y
 
 ---
 
-## 🌐 Live Site
 
-🔗 [Check out the deployed site here](https://your-netlify-link.netlify.app)  
-*(Replace with your actual Netlify link)*
+## 🚀 Live Demo
+
+👉 [View Portfolio on Vercel](https://ns-portfolio-zeta.vercel.app/)
 
 ---
 
