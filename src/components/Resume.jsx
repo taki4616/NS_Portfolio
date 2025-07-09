@@ -6,7 +6,7 @@ function Resume() {
 
   const handleDownload = async () => {
     try {
-      const response = await fetch("https://backend-resume-u0x1.onrender.com/", {
+      const response = await fetch("https://backend-resume-u0x1.onrender.com/download_resume", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -19,11 +19,16 @@ function Resume() {
         return;
       }
 
+      if (!response.ok) {
+        setError("Server error. Please try again later.");
+        return;
+      }
+
       const blob = await response.blob();
       const url = window.URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
-      link.setAttribute("download", "Nataki-Skinner-Resume.pdf");
+      link.setAttribute("download", "Nataki-Skinner-Resume2.pdf"); // updated filename
       document.body.appendChild(link);
       link.click();
       link.parentNode.removeChild(link);
@@ -40,7 +45,7 @@ function Resume() {
       <p>Enter the password to securely download my resume.</p>
       <input
         type="password"
-        placeholder="nannypass123"
+        placeholder="Enter password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
