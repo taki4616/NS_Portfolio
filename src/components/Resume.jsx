@@ -1,56 +1,51 @@
 import React, { useState } from "react";
-import ResumeModal from "./ResumeModal";
 
 function Resume() {
-  const [isUnlocked, setIsUnlocked] = useState(false);
-  const [showModal, setShowModal] = useState(false);
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  const handleUnlock = () => {
-    setShowModal(true);
-  };
+  const handleDownload = async () => {
+    try {
+      const response = await fetch("https://backend-resume-u0x1.onrender.com/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ password }),
+      });
 
-  const handleModalClose = () => {
-    setShowModal(false);
-  };
+      if (response.status === 401) {
+        setError("Incorrect password");
+        return;
+      }
 
-  const handleSuccess = () => {
-    setIsUnlocked(true);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", "Nataki-Skinner-Resume.pdf");
+      document.body.appendChild(link);
+      link.click();
+      link.parentNode.removeChild(link);
+      setError("");
+      setPassword("");
+    } catch {
+      setError("Server error. Please try again later.");
+    }
   };
 
   return (
     <section id="resume">
       <h2>Resume</h2>
-      <p>You can view or download my resume below.</p>
-
-      {!isUnlocked ? (
-        <button className="button" onClick={handleUnlock}>
-          🔐 Unlock Resume
-        </button>
-      ) : (
-        <div className="resume-buttons">
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="button"
-          >
-            View Resume
-          </a>
-          <a
-            href="/resume.pdf"
-            download
-            className="button outline"
-          >
-            Download PDF
-          </a>
-        </div>
-      )}
-
-      <ResumeModal
-        show={showModal}
-        onClose={handleModalClose}
-        onSuccess={handleSuccess}
+      <p>Enter the password to securely download my resume.</p>
+      <input
+        type="password"
+        placeholder="nannypass123"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
       />
+      <button onClick={handleDownload}>Download Resume</button>
+      {error && <p style={{ color: "crimson" }}>{error}</p>}
     </section>
   );
 }
