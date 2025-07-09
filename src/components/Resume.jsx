@@ -1,3 +1,5 @@
+// Updated placeholder text
+
 import React, { useState } from "react";
 
 function Resume() {
