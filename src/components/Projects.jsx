@@ -5,22 +5,22 @@ const projects = [
     title: "NannyMatch Lite",
     description: "A matchmaking platform for families and nannies to connect. Built with React and localStorage to simulate real-world interactions, including profile creation, filters, and applications.",
     tech: ["React", "CSS", "localStorage"],
-    link: "https://your-nannymatch-link.netlify.app",
-    repo: "https://github.com/your-username/nannymatch-lite"
+    link: "https://nannymatch-lite.netlify.app",
+    repo: "https://github.com/taki4616/nannymatch-lite"
   },
   {
     title: "NannyVent",
     description: "A blog-style platform for nannies and parents to share workplace stories and parenting insights. Built with Flask and PostgreSQL.",
     tech: ["Flask", "PostgreSQL", "HTML/CSS"],
-    link: "https://nannyvent-demo.netlify.app",
-    repo: "https://github.com/your-username/nannyvent"
+    link: "https://nannyvent-demo.netlify.app",  // Update this with your real demo link once deployed
+    repo: "https://github.com/taki4616/nannyvent"
   },
   {
     title: "Portfolio Site",
     description: "The very site you're viewing! A sleek single-page application built with React, featuring smooth scrolling, responsive design, and a theme toggle.",
     tech: ["React", "CSS", "Vite"],
     link: "#",
-    repo: "https://github.com/your-username/portfolio-site"
+    repo: "https://github.com/taki4616/portfolio-site"
   }
 ];
 
