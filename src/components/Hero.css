@@ -1,0 +1,175 @@
+.hero-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 80px 20px;
+  background: var(--bg-color);
+  overflow: hidden;
+}
+
+/* Theme Button */
+.theme-toggle-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.theme-toggle-btn:hover {
+  background: var(--accent-color);
+  color: white;
+}
+
+/* ----------------------------- */
+/* GRID LAYOUT */
+/* ----------------------------- */
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: center;
+  position: relative;
+}
+
+/* ----------------------------- */
+/* LEFT SIDE TEXT */
+/* ----------------------------- */
+
+.hero-left {
+  z-index: 2;
+}
+
+.hero-name {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--text-color);
+}
+
+/* Rich Gold underline */
+.gold-underline {
+  width: 160px;
+  height: 6px;
+  background: #B68D40; /* Rich gold */
+  border-radius: 4px;
+  margin-bottom: 1.2rem;
+}
+
+.hero-title {
+  font-size: 1.25rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.hero-tagline {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  max-width: 420px;
+  margin-bottom: 1.8rem;
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 5.5rem;
+}
+
+.hero-btn {
+  padding: 0.8rem 1.4rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+  border: 1px solid var(--accent-color);
+}
+
+.primary-btn {
+  background: var(--accent-color);
+  color: white;
+}
+.primary-btn:hover {
+  background: #5878ac;
+}
+
+.secondary-btn {
+  background: transparent;
+  color: var(--accent-color);
+}
+.secondary-btn:hover {
+  background: rgba(109, 143, 199, 0.15);
+}
+
+/* ----------------------------- */
+/* MAIN HERO PHOTO */
+/* ----------------------------- */
+
+.hero-photo-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-main-photo {
+  width: 100%;
+  max-width: 460px;
+  border-radius: 18px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.15);
+}
+
+/* ----------------------------- */
+/* FLOATING BADGE PHOTOS */
+/* ----------------------------- */
+
+.badge {
+  position: absolute;
+  width: 105px;
+  height: 105px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #B68D40;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+}
+
+/* Badge positions — organic cluster placement */
+.badge-one {
+  bottom: 70px;
+  right: 90px;
+}
+
+.badge-two {
+  bottom: 20px;
+  right: 200px;
+}
+
+/* ----------------------------- */
+/* PHONE / SMALL SCREEN */
+/* ----------------------------- */
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-main-photo {
+    margin: 0 auto 30px auto;
+  }
+
+  .badge-one,
+  .badge-two {
+    display: none; /* hide on mobile for clean layout */
+  }
+
+  .gold-underline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+

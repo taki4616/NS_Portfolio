@@ -8,6 +8,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import "./styles.css";
 
+
 function App() {
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme") || "light";
