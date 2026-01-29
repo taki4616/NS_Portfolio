@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-
 import React from "react";
 
 const projects = [
@@ -19,6 +19,21 @@ const projects = [
     tech: ["Flask", "PostgreSQL", "HTML/CSS"],
     link: "https://nannyvent-demo.netlify.app",
     repo: "https://github.com/taki4616/nannyvent",
+  },
+  {
+    title: "Career-Scraper",
+    description:
+      "A full-stack job aggregation tool that scrapes remote job listings from multiple sources and exposes them through a REST API and lightweight frontend.",
+    tech: [
+      "Python",
+      "FastAPI",
+      "Beautiful Soup",
+      "SQLite",
+      "Vanilla JavaScript",
+      "HTML/CSS",
+    ],
+    repo: "https://github.com/taki4616/career-scraper",
+    repoLabel: "GitHub Demo →",
   },
   {
     title: "Portfolio Site",
@@ -57,15 +72,21 @@ export default function Projects() {
 
             <div className="project-links">
               {project.link && (
-                <a href={project.link} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Live Demo →
                 </a>
               )}
+
               {project.repo && (
-                <a href={project.repo} target="_blank" rel="noopener noreferrer">
-                  GitHub →
-                </a>
-              )}
+  <a href={project.repo} target="_blank" rel="noopener noreferrer">
+    {project.repoLabel || "GitHub →"}
+  </a>
+)}
+
             </div>
           </motion.div>
         ))}
