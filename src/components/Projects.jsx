@@ -17,7 +17,7 @@ const projects = [
     description:
       "A blog-style platform for nannies and parents to share workplace stories and parenting insights. Built with Flask and PostgreSQL.",
     tech: ["Flask", "PostgreSQL", "HTML/CSS"],
-    link: "https://nannyvent-demo.netlify.app",
+    link: "https://nannyvent.onrender.com",
     repo: "https://github.com/taki4616/nannyvent",
   },
   {
