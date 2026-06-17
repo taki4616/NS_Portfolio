@@ -36,12 +36,12 @@ const projects = [
     repoLabel: "GitHub Demo →",
   },
   {
-    title: "Portfolio Site",
+    title: "Ventur",
     description:
-      "The very site you're viewing! A sleek single-page application built with React, featuring smooth scrolling, responsive design, and a theme toggle.",
-    tech: ["React", "CSS", "Vite"],
-    link: "#",
-    repo: "https://github.com/taki4616/portfolio-site",
+      "An AI-powered outdoor adventure app that gives you a real-time \"Should I Go?\" verdict for hikes, beaches, and camping trips — combining live weather data with Claude AI to generate a personalized go/no-go recommendation.",
+    tech: ["React", "Tailwind CSS", "Flask", "Anthropic Claude API", "Open-Meteo API"],
+    link: "https://ventur-tau.vercel.app",
+    repo: "https://github.com/taki4616/ventur",
   },
 ];
 
